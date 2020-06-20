@@ -1,4 +1,4 @@
-#AceleraDev Data Science
+# AceleraDev Data Science
 
 Neste repositório serão disponibilizados os desafios desenvolvidos durante as 10 módulos do programa de aceleração em Data Science da [Codenation](https://www.codenation.dev/).
 
@@ -6,9 +6,9 @@ Neste repositório serão disponibilizados os desafios desenvolvidos durante as 
 
 O AceleraDev Data Science é um programa de capacitação gratuito para profissionais de tecnologia. Durante 10 semanas, devs e cientistas de dados têm acesso a desafios, conteúdos e à Comunidade Codenation para adquirirem e praticarem as habilidades técnicas mais utilizadas por empresas de tecnologia de todo o mundo.
 
-###Desafios:
+### Desafios:
 
-- **Desafio 1:** Pré-processamento de dados em Python;
+- **Desafio 1:** [Pré-processamento de dados em Python](https://github.com/monteiro-fernando/AceleraDev_DataScience/tree/master/data-science-0);
 - **Desafio 2:**
 - **Desafio 3:**
 - **Desafio 4:**
