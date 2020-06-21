@@ -11,14 +11,17 @@
 
 # ## _Set up_ da análise
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
 import numpy as np
 
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 
-# In[ ]:
+
+# In[2]:
 
 
 black_friday = pd.read_csv("black_friday.csv")
@@ -26,128 +29,146 @@ black_friday = pd.read_csv("black_friday.csv")
 
 # ## Inicie sua análise a partir daqui
 
-# In[ ]:
+# In[4]:
 
 
-
+black_friday.head()
 
 
 # ## Questão 1
 # 
 # Quantas observações e quantas colunas há no dataset? Responda no formato de uma tuple `(n_observacoes, n_colunas)`.
 
-# In[33]:
+# In[7]:
 
 
 def q1():
-   x = (537577, 12)
-   return(x)
+   x1 = black_friday.shape
+   return (x1)
+q1()
 
 
 # ## Questão 2
 # 
 # Há quantas mulheres com idade entre 26 e 35 anos no dataset? Responda como um único escalar.
 
-# In[ ]:
+# In[9]:
 
 
 def q2():
-    # Retorne aqui o resultado da questão 2.
-    pass
+    x2 = black_friday.query("Gender == 'F' & Age == '26-35'").shape[0]
+    return (x2)
+q2()
 
 
 # ## Questão 3
 # 
 # Quantos usuários únicos há no dataset? Responda como um único escalar.
 
-# In[ ]:
+# In[10]:
 
 
 def q3():
-    # Retorne aqui o resultado da questão 3.
-    pass
+    x3 = len(black_friday['User_ID'].unique())
+    return (x3)
+q3()
 
 
 # ## Questão 4
 # 
 # Quantos tipos de dados diferentes existem no dataset? Responda como um único escalar.
 
-# In[ ]:
+# In[11]:
 
 
 def q4():
-    # Retorne aqui o resultado da questão 4.
-    pass
+    x4 = len(black_friday.dtypes.unique())
+    return (x4)
+q4()
 
 
 # ## Questão 5
 # 
 # Qual porcentagem dos registros possui ao menos um valor null (`None`, `ǸaN` etc)? Responda como um único escalar entre 0 e 1.
 
-# In[ ]:
+# In[8]:
 
 
 def q5():
-    # Retorne aqui o resultado da questão 5.
-    pass
+    x5 = black_friday.isnull().sum().max() / black_friday.shape[0]
+    return (x5)
+q5()
 
 
 # ## Questão 6
 # 
 # Quantos valores null existem na variável (coluna) com o maior número de null? Responda como um único escalar.
 
-# In[ ]:
+# In[19]:
 
 
 def q6():
-    # Retorne aqui o resultado da questão 6.
-    pass
+    x6 = black_friday.isna().sum().max()
+    return (x6)
+q6()
 
 
 # ## Questão 7
 # 
 # Qual o valor mais frequente (sem contar nulls) em `Product_Category_3`? Responda como um único escalar.
 
-# In[ ]:
+# In[21]:
 
 
 def q7():
-    # Retorne aqui o resultado da questão 7.
-    pass
+    x7 = black_friday['Product_Category_3'].mode().values[0]
+    return (x7)
+q7()
 
 
 # ## Questão 8
 # 
 # Qual a nova média da variável (coluna) `Purchase` após sua normalização? Responda como um único escalar.
 
-# In[ ]:
+# In[7]:
 
 
 def q8():
-    # Retorne aqui o resultado da questão 8.
-    pass
+    scaler = MinMaxScaler()
+    x8 = scaler.fit_transform(black_friday['Purchase'].values.reshape(-1, 1)).mean()
+    return float(x8)
+q8()
 
 
 # ## Questão 9
 # 
 # Quantas ocorrências entre -1 e 1 inclusive existem da variáel `Purchase` após sua padronização? Responda como um único escalar.
 
-# In[ ]:
+# In[46]:
 
 
 def q9():
-    # Retorne aqui o resultado da questão 9.
-    pass
+    standard = StandardScaler()
+    x9 = standard.fit_transform(black_friday['Purchase'].values.reshape(-1, 1))
+    return (len(x9[(x9 > -1) & (x9 < 1)]))
+q9()
 
 
 # ## Questão 10
 # 
 # Podemos afirmar que se uma observação é null em `Product_Category_2` ela também o é em `Product_Category_3`? Responda com um bool (`True`, `False`).
 
-# In[ ]:
+# In[4]:
 
 
 def q10():
-    # Retorne aqui o resultado da questão 10.
-    pass
+    x10 = black_friday[black_friday['Product_Category_2'].isnull()]
+    return bool(x10['Product_Category_2'].sum() == x10['Product_Category_3'].sum())
+q10()
+
+
+# In[ ]:
+
+
+
 
