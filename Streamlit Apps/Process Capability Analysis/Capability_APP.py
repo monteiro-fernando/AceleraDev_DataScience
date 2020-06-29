@@ -64,7 +64,7 @@ def main():
     st.markdown('Process capability compares the output of an in-control process to the specification limits by using capability indices. The comparison is made by forming the ratio of the spread between the process specifications (the specification "width") to the spread of the process values, as measured by 6 process standard deviation units (the process "width").')
     st.markdown('**If you do not have your own data, click on the link bellow and download our sample data to test.**')
     '''
-    [Download](https://doc-0k-3o-docs.googleusercontent.com/docs/securesc/itr132vs8oon78v0jls0eq7g347bfn62/2iu14bn0h2hg21ihccpd997e8356dqc3/1593382575000/02877853207575496395/02877853207575496395/15jYCdZN4m_2b_UnIA4a7h2QnvNvvlQpV?e=download&authuser=0&nonce=poi1tadhrhlce&user=02877853207575496395&hash=pcm2h49len7hssjeofnpcifaiu9l0g5o)
+    [Download](https://drive.google.com/file/d/15jYCdZN4m_2b_UnIA4a7h2QnvNvvlQpV/view?usp=sharing)
     '''
     file  = st.file_uploader('Load your sample here: (.csv)', type = 'csv',)
     if file is not None:
