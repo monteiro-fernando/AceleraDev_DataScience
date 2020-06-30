@@ -68,7 +68,7 @@ def main():
     '''
     file  = st.file_uploader('Load your sample here: (.csv)', type = 'csv',)
     if file is not None:
-        df = pd.read_csv(file, decimal=",")
+        df = pd.read_csv(file, decimal=".")
         df = pd.DataFrame(data = df)
         df = df.select_dtypes(include=[np.number])
         all_columns = df.columns.to_list()
