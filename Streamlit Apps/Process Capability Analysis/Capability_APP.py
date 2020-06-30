@@ -68,8 +68,13 @@ def main():
     '''
     file  = st.file_uploader('Load your sample here: (.csv)', type = 'csv',)
     if file is not None:
-        df = pd.read_csv(file, delimiter=";", decimal=",")
+        df = pd.read_csv(file, decimal=",")
         df = pd.DataFrame(data = df)
+        df = df.select_dtypes(include=[np.number])
+        all_columns = df.columns.to_list()
+        column_to_analyze = st.selectbox("Select Column to Analyze (**Only numerical columns will appear here.**)", all_columns)
+        df = pd.DataFrame(data = df, columns = [column_to_analyze])
+
 
         if choice == 'View Raw Data':
             st.markdown('**Data Preview:**')
