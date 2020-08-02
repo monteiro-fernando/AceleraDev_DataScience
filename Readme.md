@@ -14,7 +14,7 @@ O AceleraDev Data Science é um programa de capacitação gratuito para profissi
 - **Desafio 4:** [Aplicando testes de hipóteses](https://github.com/monteiro-fernando/AceleraDev_DataScience/tree/master/data-science-2);
 - **Desafio 5:** [Redução de Dimensionalidade e Seleção de Atributos](https://github.com/monteiro-fernando/AceleraDev_DataScience/tree/master/data-science-3);
 - **Desafio 6:** [Feature Engineering](https://github.com/monteiro-fernando/AceleraDev_DataScience/tree/master/data-science-4);
-- **Desafio 7:**
+- **Desafio 7:** [Descubra as Melhores Notas de Matemática do ENEM 2016](https://github.com/monteiro-fernando/AceleraDev_DataScience/tree/master/enem-2);
 - **Desafio 8:**
 - **Desafio 9:**
 - **Desafio 10:**
